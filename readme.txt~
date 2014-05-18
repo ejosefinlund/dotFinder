@@ -1,0 +1,32 @@
+This program is written by Josefin Lund 2014.
+
+Its purpose is to find the number of cells in an image.
+Definition of cell: roundish area in a color different from the ambient.
+
+Parts:
+
+Main: loads image, calls method to convert image to black and white.
+
+In the future: enhance contrast of image to simplify finding of cells.
+
+dotFunctions 
+Global variables:
+numberOfDots = 0
+cellPixels = []
+
+methods:
+- make image black and white
+	in: rgb or black and white image
+	out: black and white image
+
+- a set that keeps track of pixels that contain the cell color and have already been found and counted by the program.
+
+- a function that searches through the pixels in order. Right to left, downwards. If a pixel is found that is not yet contained by cellPixels, the (x,y) of the pixel is sent to the cellInvestigator method.
+
+- cellInvestigator method. Gets the coordinate upper left coordinate of a new cell that needs to be investigated.
+Searches through every row of the cell to find he borders of it and ad it to cellPixels. After the cell is investigated, numberOfDots =+1.
+
+
+Possible future improvements:
+Reduce the resoultion of the image if the cells tend to be big enough to be found anyway.
+GUI
